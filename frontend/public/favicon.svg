@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Brutalist Drop Shadow -->
+  <rect x="18" y="18" width="72" height="72" fill="#000000" />
+  
+  <!-- Main Base Square -->
+  <rect x="10" y="10" width="72" height="72" fill="#B490FF" stroke="#000000" stroke-width="6" />
+  
+  <!-- Center 'O' Element -->
+  <circle cx="46" cy="46" r="18" fill="#FFFFFF" stroke="#000000" stroke-width="6" />
+  
+  <!-- Small Accent Detail -->
+  <circle cx="46" cy="46" r="6" fill="#000000" />
+</svg>

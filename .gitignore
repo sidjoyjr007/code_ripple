@@ -1,0 +1,53 @@
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# ── Secrets — NEVER commit these ────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Node / Frontend ──────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.next/
+frontend/build/
+
+# ── Protobuf generated files ─────────────────────────────
+backend/src/parser/scip_pb2.py
+
+# ── Docker volumes / runtime data ────────────────────────
+data/
+*.log
+*.db
+*.sqlite3
+
+# ── macOS ────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+
+# ── Editor ───────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── SCIP / ingestion artefacts ───────────────────────────
+*.scip
+index.scip

@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* 
+  REAL-WORLD THEMING ARCHITECTURE 
+  We map our specific brand colors to standard semantic variables.
+  This allows generic components (like a Button) to just use `bg-primary` 
+  and automatically inherit the brand's Neo-Brutalist Lavender color.
+*/
+:root {
+  /* CLASSIC GUMROAD NEO-BRUTALISM Palette */
+  --brand-cream: #ffffff;
+  --raw-primary: #FF90E8; /* Vibrant Pink */
+  --raw-secondary: #FFC900; /* Yellow */
+  --raw-accent: #23A094; /* Mint / Teal */
+  --raw-info: #90A8ED; /* Blue */
+  --raw-warning: #FF9F1C; /* Orange */
+  --brand-white: #ffffff;
+  --brand-black: #000000;
+
+  /* Semantic UI Mapping */
+  --background: var(--brand-cream);
+  --foreground: var(--brand-black);
+
+  --card: var(--brand-white);
+  --card-foreground: var(--brand-black);
+
+  --popover: var(--brand-white);
+  --popover-foreground: var(--brand-black);
+
+  --primary: var(--raw-primary);
+  --primary-foreground: var(--brand-black);
+
+  --secondary: var(--raw-secondary);
+  --secondary-foreground: var(--brand-black);
+
+  --muted: var(--brand-cream);
+  --muted-foreground: #555555;
+
+  --accent: var(--raw-accent);
+  --accent-foreground: var(--brand-black);
+
+  --info: var(--raw-info);
+  --warning: var(--raw-warning);
+
+  --destructive: #ff5555;
+  --destructive-foreground: var(--brand-white);
+
+  --border: var(--brand-black);
+  --input: var(--brand-white);
+  --ring: var(--brand-black);
+  
+  --surface: var(--brand-white);
+
+  --radius: 0.5rem; /* Updated to have rounded corners instead of sharp edges */
+}
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-info: var(--info);
+  --color-warning: var(--warning);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+}
+
+html, body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  input, textarea {
+    @apply border-[3px] border-border shadow-brutal-sm rounded-[var(--radius)] focus-visible:ring-0 focus-visible:ring-offset-0 bg-card text-card-foreground;
+  }
+}
+
+@utility shadow-brutal {
+  box-shadow: 6px 6px 0px 0px var(--brand-black);
+}
+
+@utility shadow-brutal-sm {
+  box-shadow: 4px 4px 0px 0px var(--brand-black);
+}
+
+@utility active-brutal {
+  @apply active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-75;
+}
+
+@utility active-brutal-sm {
+  @apply active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-75;
+}
+
+@layer base {
+  /* Hide Scrollbar Globally */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  * {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
